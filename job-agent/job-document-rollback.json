@@ -1,0 +1,7 @@
+{
+    "operation": "rollback",
+    "software": {
+        "directory": "/home/ec2-user/device-defender/dd-agent",
+        "to-version": "1.0"
+    }
+}

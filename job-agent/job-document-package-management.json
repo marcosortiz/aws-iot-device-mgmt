@@ -1,0 +1,15 @@
+{
+    "operation": "pkgmgmt",
+    "package": {
+        "name": "aws-iot-greengrass",
+        "url": [
+                "${aws:iot:s3-presigned-url:https://s3.amazonaws.com/devicemanagementworkshop-miscresources-1-s3bucket-1t5apmihiidb6/aws-iot-greengrass_2.assert}",
+                "${aws:iot:s3-presigned-url:https://s3.amazonaws.com/devicemanagementworkshop-miscresources-1-s3bucket-1t5apmihiidb6/aws-iot-greengrass_2.snap}"
+        ],
+        "command": [
+                    ["sudo", "snap", "ack", "aws-iot-greengrass_2.assert"],
+                    ["sudo", "snap", "install", "aws-iot-greengrass_2.snap"]
+        ]
+
+    }
+}

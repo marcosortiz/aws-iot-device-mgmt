@@ -1,0 +1,12 @@
+{
+    "ApplicationName": "FleetProvisioningHook",
+    "DeploymentMethod": "cloudformation",
+    "Functions": {
+        "FleetProvisioningHook": {
+            "PhysicalId": {
+                "us-east-1": "cloud9-FleetProvisioningHook"
+            }
+        }
+    },
+    "StackName": "cloud9-FleetProvisioningHook"
+}

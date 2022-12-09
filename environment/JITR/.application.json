@@ -1,0 +1,12 @@
+{
+    "ApplicationName": "JITR",
+    "DeploymentMethod": "cloudformation",
+    "Functions": {
+        "JITR": {
+            "PhysicalId": {
+                "us-east-1": "cloud9-JITR"
+            }
+        }
+    },
+    "StackName": "cloud9-JITR"
+}

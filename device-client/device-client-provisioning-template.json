@@ -1,0 +1,77 @@
+{
+  "Parameters": {
+    "AWS::IoT::Certificate::Id": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "certificate": {
+      "Properties": {
+        "CertificateId": {
+          "Ref": "AWS::IoT::Certificate::Id"
+        },
+        "Status": "Active"
+      },
+      "Type": "AWS::IoT::Certificate"
+    },
+    "policy" : {
+    "Type" : "AWS::IoT::Policy",
+    "Properties" : {
+        "PolicyDocument" : {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "iot:Publish",
+                  "iot:Receive"
+                ],
+                "Resource": [
+                  "arn:aws:iot:*:*:topic/*"
+                ]
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "iot:Subscribe"
+                ],
+                "Resource": [
+                  "arn:aws:iot:*:*:topicfilter/*"
+                ]
+              },
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "iot:Connect"
+                ],
+                "Resource": "*"
+              }
+            ]
+        }
+      }
+    },
+    "thing": {
+      "OverrideSettings": {
+        "AttributePayload": "MERGE",
+        "ThingGroups": "DO_NOTHING",
+        "ThingTypeName": "REPLACE"
+      },
+      "Properties": {
+        "AttributePayload": {},
+        "ThingGroups": [],
+        "ThingName": {
+          "Fn::Join": [
+            "",
+            [
+              "device-client-",
+              {
+                "Ref": "AWS::IoT::Certificate::Id"
+              }
+            ]
+          ]
+        }
+      },
+      "Type": "AWS::IoT::Thing"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "KeyAlgorithm": "RSA_2048",
+  "SigningAlgorithm": "SHA256WITHRSA",
+  "Subject": {
+    "Country": "DE",
+    "Organization": "IoT Device Management",
+    "OrganizationalUnit": "IoT Operations",
+    "DistinguishedNameQualifier": "IoTDM",
+    "State": "Berlin",
+    "CommonName": "IoT Device Management CA",
+    "SerialNumber": "297",
+    "Locality": "Berlin"
+  }
+}

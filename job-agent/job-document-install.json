@@ -1,0 +1,9 @@
+{
+    "operation": "install",
+    "software": {
+        "url": "${aws:iot:s3-presigned-url:https://s3.amazonaws.com/devicemanagementworkshop-miscresources-1-s3bucket-1t5apmihiidb6/dd-agent.tar.gz}",
+        "directory": "/home/ec2-user/device-defender/dd-agent",
+        "version": "1.1",
+        "run-command": "python agent.py --endpoint $IOT_ENDPOINT --rootCA ~/root.ca.bundle.pem --cert dd-agent.certificate.pem --key dd-agent.private.key --client_id dd-agent --format json -i 300"
+    }
+}

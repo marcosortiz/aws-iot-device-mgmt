@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["iot:Connect"],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": ["iot:Publish","iot:Receive"],
+            "Resource": [
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topic/$aws/certificates/create/*",
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topic/$aws/certificates/create-from-csr/*",
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topic/$aws/provisioning-templates/DCFleetProvisioningTemplate/provision/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iot:Subscribe",
+            "Resource": [
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topicfilter/$aws/certificates/create/*",
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topicfilter/$aws/certificates/create-from-csr/*",
+                "arn:aws:iot:__REGION__:__ACCOUNT_ID__:topicfilter/$aws/provisioning-templates/DCFleetProvisioningTemplate/provision/*"
+            ]
+        }
+    ]
+}
